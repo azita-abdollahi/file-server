@@ -24,13 +24,11 @@ let dbInstance= mongoose.connect(process.env.MONGO_URI || config.get("MONGO_URI"
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-// let bucket;
 let conn = mongoose.connection;
 // Init gfs
 let gfs;
 conn.on('error', console.error.bind(console, 'connection error'));
 conn.once('open', () => {
-  // Init stream
   console.log("connected")
   gridfsBucket = new mongoose.mongo.GridFSBucket(conn.db, {bucketName: 'uploads'})
   gfs = Grid(conn.db, mongoose.mongo);  
