@@ -13,7 +13,7 @@ You should use `GridFS` if the size of your file exceeds the BSON-document size 
 
 When you create a new `GridFS` bucket, the driver creates the `chunks` and `files` collections, prefixed with the default bucket name `fs`, unless you specify a different name.
 
-​	![](C:\Users\AZITA\Pictures\GridFS-upload.png)
+​	![GridFS-upload](https://user-images.githubusercontent.com/108535307/180761360-62972007-f099-44c8-b723-9aa91a2f27ee.png)
 
 ​	Image source: mongodb.com
 
@@ -89,6 +89,7 @@ CMD ["npm", "run", "start"]
 ```
 
 Run application:
+
 *Note*: This instruction uses 'docker compose' version 2.
 
 ```shell
