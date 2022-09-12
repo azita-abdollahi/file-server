@@ -64,7 +64,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 app.get('/file/:filename', (req, res)=> {
     console.log("/file/");
     gfs.files.find({filename: req.params.filename}).toArray(function (err, file) {
-        if (!file[0] || file.length[0] == 0) {
+        if (!file || file.length == 0) {
             return res.status(404).json({
                 responseCode: 404,
                 responseMessage: req.params.filename + " FILE NOT FOUND"
@@ -82,7 +82,7 @@ app.get('/file/:filename', (req, res)=> {
 app.get('/file/download/:filename', (req, res)=> {
     console.log("/file/download");
     gfs.files.find({filename: req.params.filename}).toArray(function (err, file) {
-        if (!file[0] || file[0].length== 0) {
+        if (!file || file.length== 0) {
             return res.status(404).json({
                 responseCode: 404,
                 responseMessage: req.params.filename + " FILE NOT FOUND"
